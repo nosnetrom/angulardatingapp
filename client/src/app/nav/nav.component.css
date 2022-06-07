@@ -1,0 +1,6 @@
+.navbar-expand-md .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+    /* flex-grow: 5; */
+    justify-content: space-between;
+}
