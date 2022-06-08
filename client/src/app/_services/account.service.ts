@@ -8,6 +8,9 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class AccountService {
+  register(model: any) {
+    throw new Error('Method not implemented.');
+  }
   baseUrl = 'https://localhost:5001/api/';
   private currentUserSource = new ReplaySubject<User>(1); // keeping a single version of user
   currentUser$ = this.currentUserSource.asObservable();
