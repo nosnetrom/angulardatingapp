@@ -1,4 +1,11 @@
 .navVerticalDivider {
-    margin: 36px auto;
+    margin: 35px auto;
     visibility: hidden;
+}
+
+.navVerticalDivider ~ .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100vh - 72px);
 }

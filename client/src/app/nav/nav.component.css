@@ -1,8 +1,13 @@
-.navbar-expand-md .navbar-collapse {
+.navbar-expand-md .container > *:nth-child(3) {
     display: flex!important;
     flex-basis: auto;
-    /* flex-grow: 5; */
     justify-content: space-between;
+}
+.navbar-expand-md .container > *:nth-child(2) {
+    flex-grow: 2;
+}
+.navbar-expand-md .dropdown {
+    justify-content: flex-end !important;
 }
 .navbar form > * {
     margin: 0 2px;
