@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./member-list.component.css']
 })
 export class MemberListComponent implements OnInit {
+  users: any; // Used to define user type when passed to Register component
 
-  constructor() { }
+  //constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.getUsers(); // For passing data to Register component
   }
+
+  // Method used to get and pass users to Register component
+  getUsers() {
+    this.http.get('https://localhost:5001/api/users').subscribe(users => {this.users = users});
+  }
+
 
 }
