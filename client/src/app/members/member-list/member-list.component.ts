@@ -13,12 +13,12 @@ export class MemberListComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.getUsers(); // For passing data to Register component
+      this.getUsers(); // For passing data to Register component
   }
 
   // Method used to get and pass users to Register component
   getUsers() {
-    this.http.get('https://localhost:5001/api/users').subscribe(users => {this.users = users});    
+      this.http.get('https://localhost:5001/api/users').subscribe(users => {this.users = users}); 
   }
 
 
