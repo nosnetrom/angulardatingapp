@@ -6,8 +6,8 @@
 .navVerticalDivider ~ .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     height: calc(100vh - 120px);
-    padding-top: 140px;
+    padding-top: 24px;
     overflow-y: scroll;
 }
