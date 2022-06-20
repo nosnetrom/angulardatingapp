@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Member } from 'src/app/models/member';
 import { MembersService } from 'src/app/_services/members.service';
 
@@ -23,17 +24,12 @@ export class MemberListComponent implements OnInit {
   //     this.http.get('https://localhost:5001/api/users').subscribe(users => {this.users = users}); 
   // }
 
-  members: Member[];
+  members$: Observable<Member[]>; // Again, hitting the Member array; $ to designate an observable
 
   constructor(private memberService: MembersService) { }
 
   ngOnInit(): void {
-    this.loadMembers();
+    this.members$ = this.memberService.getMembers();
   }
 
-  loadMembers() {
-    this.memberService.getMembers().subscribe(members => {
-      this.members = members;
-    })
-  }
 }
