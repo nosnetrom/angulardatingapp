@@ -15,3 +15,7 @@
 .dropdown-item, .dropdown-toggle {
     cursor: pointer;
 }
+img {
+    border: solid 1px #ffffff;
+    display: inline;
+}
