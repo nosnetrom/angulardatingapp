@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ToastrModule } from 'ngx-toastr';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { HttpClientModule} from '@angular/common/http';
@@ -12,6 +13,7 @@ import { FileUploadModule } from 'ng2-file-upload';
   imports: [
     CommonModule,
     BsDropdownModule.forRoot(), // forRoot = need to initialize services or components
+    BsDatepickerModule.forRoot(),
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
     }),
@@ -22,6 +24,7 @@ import { FileUploadModule } from 'ng2-file-upload';
   ],
   exports: [
     BsDropdownModule,
+    BsDatepickerModule,
     ToastrModule,
     TabsModule,
     NgxGalleryModule,

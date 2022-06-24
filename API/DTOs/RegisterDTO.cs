@@ -8,9 +8,13 @@ namespace API.DTOs
 {
     public class RegisterDTO
     {
-        [Required]
-        [StringLength(12, MinimumLength = 3, ErrorMessage = "User names must be 3 to 12 characters long.")]
-        public string UserName { get; set; }
+        [Required] public string Username { get; set; }
+        [Required] public string KnownAs { get; set; }
+        [Required] public string Gender { get; set; }
+        [Required] public DateTime DateOfBirth { get; set; }
+        [Required] public string City { get; set; }
+        [Required] public string Country { get; set; }
+        
         [Required]
         [StringLength(12, MinimumLength = 4, ErrorMessage = "Passwords must be 4 to 12 characters long.")]
         public string Password { get; set; }

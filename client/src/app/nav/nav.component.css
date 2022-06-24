@@ -15,6 +15,9 @@
 .dropdown-item, .dropdown-toggle {
     cursor: pointer;
 }
+.nav-link.errors {
+    visibility: hidden;
+}
 img {
     border: solid 1px #ffffff;
     display: inline;
