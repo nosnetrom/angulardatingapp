@@ -32,8 +32,9 @@ bld/
 [Ll]og/
 [Ll]ogs/
 API/obj/
-API/obj/
+API/obj/*
 API/bin/
+API/bin/*
 *.cache
 
 # Visual Studio 2015/2017 cache/options directory

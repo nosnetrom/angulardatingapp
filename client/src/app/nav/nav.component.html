@@ -7,7 +7,7 @@
                     <a class="nav-link" routerLink="/members" routerLinkActive="active">Matches</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/lists" routerLinkActive="active">Lists</a>
+                    <a class="nav-link" routerLink="/lists" routerLinkActive="active">Like Lists</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/messages" routerLinkActive="active">Messages</a>
@@ -29,19 +29,19 @@
         </div>
 
         <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" class="d-flex" role="search" (ngSubmit)="login()" autocomplete="off">
-        <input 
-            name="UserName"
-            [(ngModel)]="model.UserName"
-            class="form-control me-2" 
-            type="text" 
-            placeholder="User name">
-        <input 
-            name="password"
-            [(ngModel)]="model.password"
-            class="form-control me-2" 
-            type="password" 
-            placeholder="Password">
-        <button class="btn btn-success" type="submit">Login</button>
+            <input 
+                name="UserName"
+                [(ngModel)]="model.UserName"
+                class="form-control me-2" 
+                type="text" 
+                placeholder="User name">
+            <input 
+                name="password"
+                [(ngModel)]="model.password"
+                class="form-control me-2" 
+                type="password" 
+                placeholder="Password">
+            <button class="btn btn-success" type="submit">Login</button>
         </form>
       </div>
   </nav>
