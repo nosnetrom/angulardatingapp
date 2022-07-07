@@ -29,14 +29,14 @@ namespace API.Controllers
             var sourceUser= await _likesRepository.GetUserWithLikes(sourceUserId);
 
             if (likedUser == null) return NotFound();
-            if (sourceUser.username == username) return BadRequest("Self-likes are not allowed!");
-            var userLike = await _likesRepository.GetUserLike(sourceUserId, likedUser.ID);
+            if (sourceUser.UserName == username) return BadRequest("Self-likes are not allowed!");
+            var userLike = await _likesRepository.GetUserLike(sourceUserId, likedUser.Id);
             if (userLike != null) return BadRequest("Duplicate likes are not allowed!");
 
             userLike = new UserLike
             {
                 SourceUserId = sourceUserId,
-                LikedUserId = likedUser.ID,
+                LikedUserId = likedUser.Id,
             };
 
             sourceUser.LikedUsers.Add(userLike);

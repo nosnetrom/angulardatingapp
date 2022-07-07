@@ -24,11 +24,11 @@ namespace API.Data
         public async Task<AppUser> GetUserWithLikes(int userId) {
             return await _context.Users
                 .Include(x => x.LikedUsers)
-                .FirstOrDefaultAsync(x => x.ID == userId);
+                .FirstOrDefaultAsync(x => x.Id == userId);
         }
 
         public async Task<PagedList<LikeDTO>> GetUserLikes(LikesParams likesParams) {
-            var users = _context.Users.OrderBy(u => u.username).AsQueryable();
+            var users = _context.Users.OrderBy(u => u.UserName).AsQueryable();
             var likes = _context.Likes.AsQueryable();
             if (likesParams.Predicate == "liked")
             {
@@ -43,12 +43,12 @@ namespace API.Data
             }
 
             var likedUsers = users.Select(user => new LikeDTO{
-                Username = user.username,
+                Username = user.UserName,
                 KnownAs = user.KnownAs,
                 Age = user.DateOfBirth.CalculateAge(),
                 PhotoUrl = user.Photos.FirstOrDefault(p => p.IsMain).Url,
                 City = user.City,
-                Id = user.ID,
+                Id = user.Id,
             });
 
             return await PagedList<LikeDTO>.CreateAsync(likedUsers, likesParams.PageNumber, likesParams.PageSize);
