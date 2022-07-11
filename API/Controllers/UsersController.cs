@@ -27,7 +27,6 @@ namespace API.Controllers
             _photoService = photoService;
         }
 
-
         [HttpGet]
         // [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers([FromQuery]UserParams userParams) 

@@ -10,6 +10,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 import { FileUploadModule } from 'ng2-file-upload';
 import { TimeagoModule } from 'ngx-timeago';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [],
@@ -27,6 +28,7 @@ import { TimeagoModule } from 'ngx-timeago';
     NgxGalleryModule,
     FileUploadModule,
     TimeagoModule.forRoot(),
+    ModalModule.forRoot(),
   ],
   exports: [
     BsDropdownModule,
@@ -38,6 +40,7 @@ import { TimeagoModule } from 'ngx-timeago';
     NgxGalleryModule,
     FileUploadModule,
     TimeagoModule,
+    ModalModule,
   ]
 })
 export class SharedModule { }
