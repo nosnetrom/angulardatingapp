@@ -36,6 +36,22 @@ namespace API.Extensions
                         ValidateIssuer = false, // Issuer = API app
                         ValidateAudience = false, // Audience = Angular app
                     };
+
+                    options.Events = new JwtBearerEvents
+                    {
+                        OnMessageReceived = context =>
+                        {
+                            var accessToken = context.Request.Query["access_token"]; // SignalR sends this up with "access_token" as the key
+
+                            var path = context.HttpContext.Request.Path; // We only want SignalR-specific paths
+                            if (!string.IsNullOrEmpty(accessToken) && path.StartsWithSegments("/hubs")) // We will have multiple SignalR paths, all starting from /hubs
+                            {
+                                context.Token = accessToken;
+                            }
+
+                            return Task.CompletedTask;
+                        }
+                    };
                 }
             );
 
