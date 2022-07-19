@@ -23,14 +23,12 @@ namespace API.Extensions
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IPhotoService, PhotoService>();
             services.AddScoped<LogUserActivity>();
-            services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IMessageRepository, MessageRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
             services.AddDbContext<DataContext>(options => 
             {
                 options.UseSqlite(config.GetConnectionString("DefaultConnection"));
             });
-            services.AddScoped<ILikesRepository, LikesRepository>();
 
             return services;
         }
