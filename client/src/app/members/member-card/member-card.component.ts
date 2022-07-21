@@ -10,7 +10,7 @@ import { PresenceService } from 'src/app/_services/presence.service';
   styleUrls: ['./member-card.component.css']
 })
 export class MemberCardComponent implements OnInit {
-  @Input() member: Member
+  @Input() member: Member;
   
   constructor(private memberService: MembersService, private toastrService: ToastrService, public presence: PresenceService) { }
 
