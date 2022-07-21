@@ -16,19 +16,21 @@ export class MessagesComponent implements OnInit {
   pageNumber = 1;
   pageSize = 5;
   loading = false;
+  messageType: string = "Unread";
 
   constructor(private messageService: MessageService, private confirmService: ConfirmService) { }
 
   ngOnInit(): void {
-    this.loadMessages();
+    this.loadMessages(this.messageType);
   }
 
-  loadMessages() {
+  loadMessages(msgtype) {
     this.loading = true;
     this.messageService.getMessages(this.pageNumber, this.pageSize, this.container).subscribe(response => {
       this.messages = response.result;
       this.pagination = response.pagination;
       this.loading = false;
+      this.messageType = msgtype;
     })
   }
 
@@ -45,7 +47,7 @@ export class MessagesComponent implements OnInit {
   pageChanged(event: any) {
     if (this.pageNumber !== event.page) {
       this.pageNumber = event.page;
-      this.loadMessages();
+      this.loadMessages(this.messageType)
     }
   }
 
