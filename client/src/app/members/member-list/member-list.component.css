@@ -1,3 +1,111 @@
 .row.d-flex.justify-content-center > * {
     width: auto;
 }
+
+@media (max-width: 539px) {
+    form .col-sm-12.col-md-6.col-lg-4 {
+        display: flex;
+        justify-content: center;
+    }
+    .col-xs-0 {
+        display: none;
+    }
+    .col-xs-2 {
+        width: 16.6666% !important;
+    }
+    .col-xs-3 {
+        width: 25% !important;
+    }
+    .col-xs-4 {
+        width: 33.3333% !important;
+    }
+    .col-xs-6 {
+        width: 50% !important;
+    } 
+    .col-xs-12 {
+        width: 100% !important;
+    }
+}
+
+@media (min-width: 540px) and (max-width: 767px) {
+    form .col-sm-12.col-md-6.col-lg-4 {
+        display: flex;
+        justify-content: center;
+    }
+    .col-sm-0 {
+        display: none;
+    }
+    .col-sm-2 {
+        width: 16.6666% !important;
+    }
+    .col-sm-3 {
+        width: 25% !important;
+    }
+    .col-sm-4 {
+        width: 33.3333% !important;
+    }
+    .col-sm-6 {
+        width: 50% !important;
+    } 
+    .col-sm-12 {
+        width: 100% !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .form-group.ageFilter {
+        justify-content: flex-start !important;
+    }
+    .form-group.genderFilter {
+        justify-content: flex-end !important;
+    }
+    form .col.col-sm-12.col-md-6.col-lg-4 {
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+    }
+    form .col.col-sm-12.col-md-6.col-lg-4 > .btn-group {
+        width:fit-content;
+    }
+    .col-md-0 {
+        display: none;
+    }
+    .col-md-2 {
+        width: 16.6666% !important;
+    }
+    .col-md-3 {
+        width: 25% !important;
+    }
+    .col-md-4 {
+        width: 33.3333% !important;
+    }
+    .col-md-6 {
+        width: 50% !important;
+    } 
+    .col-md-12 {
+        width: 100% !important;
+    }    
+}
+@media (min-width: 992px) {
+    .form-group.ageFilter {
+        justify-content: flex-start;
+    }
+    form .col-sm-12.col-md-6.col-lg-4 .btn-group {
+        display: flex;
+        justify-content: flex-end !important;
+    }
+    .col-lg-0 {
+        display: none;
+    }
+    .col-lg-2 {
+        width: 16.6666% !important;
+    }
+    .col-lg-3 {
+        width: 25% !important;
+    }
+    .col-lg-4 {
+        width: 33.3333% !important;
+    }
+    .col-lg-6 {
+        width: 50% !important;
+    } 
+}

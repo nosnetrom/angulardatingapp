@@ -22,3 +22,42 @@ img {
     border: solid 1px #ffffff;
     display: inline;
 }
+.container > .row {
+    width: 100%;
+    align-items: center;
+}
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+@media (max-width: 767px) {
+    .col-md-0 {
+        display: none;
+    }
+    .col-md-3 {
+        width: 25% !important;
+    }
+    .col-md-4 {
+        width: 33.3333% !important;
+    }
+    .col-md-6 {
+        width: 50% !important;
+    } 
+    img {
+        display: none;
+    }
+}
+@media (min-width: 768px) {
+    .col-lg-0 {
+        display: none;
+    }
+    .col-lg-3 {
+        width: 25% !important;
+    }
+    .col-lg-4 {
+        width: 33.3333% !important;
+    }
+    .col-lg-6 {
+        width: 50% !important;
+    } 
+}
