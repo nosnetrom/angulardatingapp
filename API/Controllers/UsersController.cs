@@ -1,19 +1,5 @@
-using API.Data;
-using API.Entities;
-using API.Interfaces;
-using API.DTOs;
-using API.Extensions;
-using API.Helpers;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authorization;
-using AutoMapper;
-using System.Security.Claims;
-using Microsoft.VisualBasic;
+namespace API.Controllers;
 
-namespace API.Controllers
-{
     [Authorize]
     public class UsersController : BaseApiController
     {
@@ -143,4 +129,3 @@ namespace API.Controllers
         }
 
     }
-}

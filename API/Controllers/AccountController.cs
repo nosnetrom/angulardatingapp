@@ -1,21 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using API.Data;
-using API.DTOs;
-using Microsoft.AspNetCore.Mvc;
-using API.Entities;
-using System.Security.Cryptography;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
-using API.Interfaces;
-using AutoMapper;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.OpenApi.Writers;
 
-namespace API.Controllers
-{
+
+namespace API.Controllers;
+
     public class AccountController : BaseApiController
     {
         private readonly UserManager<AppUser> _userManager;
@@ -109,4 +95,3 @@ namespace API.Controllers
             return await _userManager.Users.AnyAsync(u => u.UserName == username.ToLower());
         }
     }
-}

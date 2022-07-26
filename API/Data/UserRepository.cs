@@ -1,18 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using API.Interfaces;
-using API.Entities;
-using API.DTOs;
-using System.Data;
-using Microsoft.EntityFrameworkCore;
-using AutoMapper;
-using AutoMapper.QueryableExtensions;
-using API.Helpers;
 
-namespace API.Data
-{
+namespace API.Data;
 
     public class UserRepository : IUserRepository
     {
@@ -82,4 +69,3 @@ namespace API.Data
             return await _context.Users.Where(x => x.UserName == username).Select(x => x.Gender).FirstOrDefaultAsync();
         }
     }
-}

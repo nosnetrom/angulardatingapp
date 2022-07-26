@@ -1,16 +1,5 @@
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Threading.Tasks;
-using API.DTOs;
-using API.Entities;
-using API.Extensions;
-using API.Helpers;
-using API.Interfaces;
-using Microsoft.EntityFrameworkCore;
+namespace API.Data;
 
-namespace API.Data
-{
     public class LikesRepository : ILikesRepository
     {
         private readonly DataContext _context;
@@ -54,4 +43,3 @@ namespace API.Data
             return await PagedList<LikeDTO>.CreateAsync(likedUsers, likesParams.PageNumber, likesParams.PageSize);
         }
     }
-}

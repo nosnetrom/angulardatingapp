@@ -1,11 +1,5 @@
-using System.Security.Cryptography;
-using System.Text.Json;
-using API.Entities;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+namespace API.Data;
 
-namespace API.Data
-{
     public class Seed
     {
         public static async Task SeedUsers(UserManager<AppUser> userManager, RoleManager<AppRole> roleManager)
@@ -49,4 +43,3 @@ namespace API.Data
  
         }
     }
-}
